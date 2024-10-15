@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: go
+    develop:
+      watch:
+        - action: rebuild
+          path: ./app/main.go
+    ports:
+      - '80:80'
